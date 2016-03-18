@@ -1,0 +1,25 @@
+<script language="javascript">
+    function submitform()
+    {
+        document.forms["sp2"].submit();
+    }
+</script>
+
+<form name=sp2 action="form.php" method="post">
+    First Name:
+    <input name="Fname" type="text" style="width:260px;font-size:22px">
+        Last Name:
+        <input name="Lname" type="text" style="width:260px;font-size:22px">
+        
+        <input style="font-size: 17px" type=button onClick="submitform()" value="Submit"/>
+</form>
+
+
+<?PHP
+    if (isset($_POST['n2']) && $_POST['n2'] != "")
+    {
+        echo "Name is: " . $_POST['n2'];
+    }
+else
+echo "Nothing there.";
+    ?>

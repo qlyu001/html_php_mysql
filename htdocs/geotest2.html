@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Click the button to get your coordinates.</p>
+        
+        <button onclick="getLocation()">Try It</button>
+        
+        <p id="demo"></p>
+        
+        <script>
+            
+            function submitform()
+            {
+                var x = document.getElementById("demo");
+                document.forms["sp2"].submit();
+                document.forms["demo"].submit();
+                
+                
+                }
+
+            }
+            
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                } else {
+                    x.innerHTML = "Geolocation is not supported by this browser.";
+                }
+            }
+        
+        function showPosition(position) {
+            x.innerHTML = "Latitude: " + position.coords.latitude +
+            "<br>Longitude: " + position.coords.longitude;
+        </script>
+        <form name=sp2 action="form.php" method="post">
+            First Name:
+            <input name="Fname" type="text" style="width:260px;font-size:22px">
+                Last Name:
+                <input name="Lname" type="text" style="width:260px;font-size:22px">
+                    
+                    <input style="font-size: 17px" type=button onClick="submitform()" value="Submit"/>
+                    </form>
+
+        
+            </body>
+</html>
+
+
+
+
+
+<?PHP
+    if (isset($_POST['n2']) && $_POST['n2'] != "")
+    {
+        echo "Name is: " . $_POST['n2'];
+    }
+else
+echo "Nothing there.";
+    ?>
